@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Texte du jour</title>
+<script>
+function redirectToTextOfDay() {
+    // Base URL de la Bibliothèque en ligne (Examinons les Écritures)
+    const baseURL = "https://wol.jw.org/fr/wol/b/r1/lp-f/";
+
+    // Date du jour
+    const today = new Date();
+    const year = today.getFullYear();
+
+    // Format mois et jour sur 2 chiffres
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+
+    // Construire l'URL finale
+    const url = `${baseURL}${year}${month}${day}`;
+
+    // Rediriger automatiquement
+    window.location.href = url;
+}
+
+// Appel de la fonction au chargement de la page
+window.onload = redirectToTextOfDay;
+</script>
+</head>
+<body>
+<p>Redirection vers le texte du jour...</p>
+</body>
+</html>
